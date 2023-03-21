@@ -8,24 +8,17 @@
     <title>Password Generator</title>
 </head>
 <body>
-    <?php 
 
-    $caracterNumber = $_GET['caracterNumber'];
+    <?php
+        require 'function.php';
 
-    $lowercase = ['abcdefghilmnopqrstuvz'];
-    $uppercase = ['ABCDEFGHILMNOPQRSTUVZ'];
-    $numbers = ['123456789'];
-    $symbols = ['!@#$%&*'];
+        $characterNumber = $_GET['caracterNumber'];
 
-    $password = '';
-
-    while ($password < $caracterNumber) {
-        $password = $lowercase[rand(1,21)] . $uppercase[rand(1,21)] . $numbers[rand(1,9)] . $symbols[rand(1,7)];
-    }
-
-    var_dump($passwordLower);
-
+        if (isset($characterNumber)) {
+            $password = generatePassword($characterNumber);
+        }
     ?>
+
     <main class="bg-info-subtle vh-100">
         <div class="container">
             <div class="row">
@@ -35,7 +28,7 @@
                 </div>
                 <div class="col-12">
                     <div class="fs-3 bg-info mt-4 py-3 ps-2 border rounded">
-                        <?php echo $password ?>
+                        <span>La tua password: </span><?php echo $password ?>
                     </div>
                 </div>
                 <div class="col-12">
