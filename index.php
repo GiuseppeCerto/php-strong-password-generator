@@ -17,15 +17,11 @@
     $numbers = ['123456789'];
     $symbols = ['!@#$%&*'];
 
-    $passwordLower = '';
-
     $password = '';
 
-    $passwordLower = $lowercase[rand(1,21)];
-
-    // for ($i = 0; $i < $caracterNumber; $i++) {
-    //     $passwordLower = $lowercase[rand(1,21)];
-    // }
+    while ($password < $caracterNumber) {
+        $password = $lowercase[rand(1,21)] . $uppercase[rand(1,21)] . $numbers[rand(1,9)] . $symbols[rand(1,7)];
+    }
 
     var_dump($passwordLower);
 
