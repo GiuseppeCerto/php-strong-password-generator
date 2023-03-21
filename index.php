@@ -8,6 +8,28 @@
     <title>Password Generator</title>
 </head>
 <body>
+    <?php 
+
+    $caracterNumber = $_GET['caracterNumber'];
+
+    $lowercase = ['abcdefghilmnopqrstuvz'];
+    $uppercase = ['ABCDEFGHILMNOPQRSTUVZ'];
+    $numbers = ['123456789'];
+    $symbols = ['!@#$%&*'];
+
+    $passwordLower = '';
+
+    $password = '';
+
+    $passwordLower = $lowercase[rand(1,21)];
+
+    // for ($i = 0; $i < $caracterNumber; $i++) {
+    //     $passwordLower = $lowercase[rand(1,21)];
+    // }
+
+    var_dump($passwordLower);
+
+    ?>
     <main class="bg-info-subtle vh-100">
         <div class="container">
             <div class="row">
@@ -17,7 +39,7 @@
                 </div>
                 <div class="col-12">
                     <div class="fs-3 bg-info mt-4 py-3 ps-2 border rounded">
-                        Nessun parametro inserito
+                        <?php echo $password ?>
                     </div>
                 </div>
                 <div class="col-12">
@@ -30,8 +52,8 @@
                                 <input class="w-100 rounded" type="text" placeholder="Inserisci un numero" name="caracterNumber">
                             </div>
                             <div class="col-12 mt-5">
-                                <button type="button" class="btn btn-primary">Invia</button>
-                                <button type="button" class="btn btn-secondary" class="border border-light">Annulla</button>
+                                <button type="submit" class="btn btn-primary">Invia</button>
+                                <button type="submit" class="btn btn-secondary" class="border border-light">Annulla</button>
                             </div>
                         </form>
                     </div>
