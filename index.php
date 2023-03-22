@@ -10,7 +10,7 @@
 <body>
 
     <?php
-        require 'function.php';
+        require_once __DIR__ . '/function.php';
 
         $characterNumber = $_GET['caracterNumber'];
 
